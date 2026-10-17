@@ -1,47 +1,69 @@
-# Berou — Releases
+# Berou
 
-**Canal de distribuição do Berou para Windows.**
+### Compartilhe sua tela. Reúna seus amigos. Assista junto.
 
-O Berou é um aplicativo de streaming de tela e áudio voltado a sessões compartilhadas entre amigos. Este repositório reúne os **instaladores e as notas de versão** do aplicativo, sem expor os repositórios privados de desenvolvimento.
+O **Berou** é um aplicativo de compartilhamento de tela e áudio para Windows, pensado para quem quer transmitir um jogo, mostrar um aplicativo ou simplesmente compartilhar a tela com amigos — em uma sala própria e com foco em **baixa latência e simplicidade**.
 
-> [!IMPORTANT]
-> O Berou está em fase beta. Algumas versões podem conter problemas conhecidos ou mudanças de comportamento. Durante o beta fechado, os downloads são restritos aos participantes autorizados; a disponibilidade pública dependerá da visibilidade deste repositório.
+O projeto está em desenvolvimento ativo e é distribuído em **versões beta**. Queremos que assistir ou transmitir seja uma experiência direta, sem a complexidade de configurar um servidor de streaming.
 
-## Baixar o Berou
+## ⬇️ Baixar o Berou
 
-### [⬇️ Acessar versões e downloads](https://github.com/IgorSantFerreira/berou-releases/releases)
+**[Acessar a versão mais recente e baixar o instalador para Windows →](https://github.com/IgorSantFerreira/berou-releases/releases)**
 
-Na página de **Releases**, abra a publicação mais recente do canal desejado e baixe o instalador para Windows em **Assets**. A lista de lançamentos é atualizada pelo próprio GitHub a cada nova publicação. Se estiver vazia, ainda não há instalador publicado neste canal.
+Para instalar:
 
-- **Beta:** versões de teste, identificadas como pré-lançamento (*pre-release*).
-- **Estável:** versões destinadas ao uso geral, quando esse canal estiver disponível.
+1. Clique no link acima para abrir a página **Releases**.
+2. Abra a **Beta mais recente** e expanda a seção **Assets**, caso esteja recolhida.
+3. Baixe o arquivo do **instalador Windows (`.exe`)**. Não escolha os arquivos automáticos `Source code (zip)` ou `Source code (tar.gz)`: eles não são o instalador.
+4. Execute o instalador e siga as instruções.
 
-> **Sobre o link "latest":** o GitHub não inclui versões marcadas como *pre-release* no endpoint `/releases/latest`. Portanto, durante as betas, use a [lista de releases](https://github.com/IgorSantFerreira/berou-releases/releases) para encontrar a publicação mais recente. O atualizador do Berou deverá consultar a API e selecionar explicitamente o canal beta ou estável.
+> **Acesso:** enquanto este repositório for privado, somente contas autorizadas conseguirão visualizar e baixar as releases. O acesso público dependerá de uma futura mudança de visibilidade.
 
-## Instalação
+## O que queremos construir
 
-1. Baixe o instalador `.exe` nos **Assets** da release escolhida.
-2. Confira o SHA-256 do arquivo com o manifesto publicado na mesma release.
-3. Execute o instalador e siga as instruções exibidas.
+O Berou nasceu da ideia de tornar o compartilhamento de tela entre amigos mais prático e responsivo, especialmente para jogos. Nosso foco é:
 
-**Windows SmartScreen:** a assinatura Authenticode não garante, por si só, confiança automática do Windows. Certificados de teste ou não reconhecidos podem resultar em avisos. Confirme a origem do download antes de executar o arquivo.
+- **Baixa latência:** reduzir o atraso entre o que acontece na tela de quem transmite e o que os amigos assistem.
+- **Experiência simples:** criar uma sala, convidar pessoas e começar a compartilhar sem uma configuração extensa.
+- **Áudio e imagem juntos:** transmitir a tela com o som do aplicativo e permitir que o grupo converse.
+- **Conexão adaptável:** buscar conexão direta entre participantes quando possível, com alternativas de transporte quando a rede não permite.
 
-## Como funcionam as versões
+Não buscamos substituir uma plataforma de transmissões públicas. A proposta do Berou é uma experiência mais próxima e direta, voltada a **salas e grupos pequenos**.
 
-Cada publicação terá:
+## O que o Berou oferece hoje
 
-- Tag de versão correspondente à versão efetiva do instalador;
-- Identificação clara de **beta** ou **estável**;
-- Arquivo instalador de Windows;
-- Resumo das mudanças e dos problemas conhecidos;
-- Hash SHA-256 para conferência de integridade.
+- **Salas por convite** para reunir participantes.
+- **Compartilhamento de tela e áudio** de aplicativos e jogos.
+- **Player dedicado** para acompanhar a transmissão.
+- **Chat de texto e voz** dentro da experiência de sala.
+- **Transporte P2P quando viável**, com fallback por relay conforme as condições da conexão.
+- **Instalador para Windows** e desenvolvimento contínuo por versões.
 
-O procedimento para publicar novas versões está em [docs/RELEASE_PROCESS.md](docs/RELEASE_PROCESS.md). O contrato proposto para consulta da versão mais recente está em [docs/UPDATE_CHANNELS.md](docs/UPDATE_CHANNELS.md).
+## Limitações atuais
 
-## Código-fonte e desenvolvimento
+O Berou ainda é um **software beta**, e é importante saber o que esperar:
 
-Este repositório é **exclusivo de distribuição**: não contém os componentes de desenvolvimento, a infraestrutura, os serviços de sinalização nem segredos operacionais do Berou. Os instaladores ficam anexados às GitHub Releases, **não versionados diretamente no Git**.
+- **Somente Windows:** não há versões nativas para macOS, Linux ou dispositivos móveis.
+- **Instabilidade é possível:** quedas de conexão, falhas de captura, dessincronização de áudio e problemas ao alternar entre aplicações ou jogos podem ocorrer. As correções evoluem de uma beta para outra.
+- **Rede e hardware importam:** latência, fluidez e disponibilidade de conexão direta dependem da máquina de quem transmite, da rede dos participantes e do transporte utilizado.
+- **Qualidade compartilhada:** o host produz um fluxo de vídeo para os espectadores; ainda não há ajuste independente de qualidade para cada pessoa.
+- **Capacidade controlada:** salas e conexões via relay podem sofrer limites técnicos ou operacionais durante os testes.
+- **Recursos ainda em evolução:** suporte a câmera e outras expansões não devem ser considerados disponíveis nesta fase.
+
+As limitações específicas de cada build, quando conhecidas, são informadas nas **notas da própria release**.
+
+## Segurança e avisos do Windows
+
+Baixe o Berou **somente pelo repositório oficial**. O Windows pode exibir um aviso do SmartScreen mesmo quando um instalador possui assinatura Authenticode, especialmente durante a fase beta. Confira a origem do arquivo antes de decidir executá-lo.
+
+Quando disponível nos Assets, o `SHA256SUMS.txt` permite conferir a integridade do instalador baixado.
+
+## Sobre este repositório
+
+Aqui ficam **os instaladores e as notas das versões** do Berou. O código-fonte de desenvolvimento e os componentes de infraestrutura não fazem parte deste repositório.
+
+Para conhecer a engenharia e as decisões técnicas do projeto, visite o [showcase técnico do Berou](https://github.com/IgorSantFerreira/berou-showcase).
 
 ---
 
-**Berou** · Desenvolvido por **Igor Santana Ferreira**.
+Desenvolvido por **Igor Santana Ferreira**.
