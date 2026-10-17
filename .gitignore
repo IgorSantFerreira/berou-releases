@@ -1,0 +1,29 @@
+# Artefatos de build: publicar somente como assets de GitHub Releases
+*.exe
+*.msi
+*.msix
+*.zip
+*.7z
+*.rar
+*.iso
+build/
+dist/
+out/
+
+# Certificados privados, chaves e segredos
+*.pfx
+*.p12
+*.key
+*.pem
+*.p8
+.env
+.env.*
+*.secret
+secrets/
+credentials/
+
+# Temporários
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
